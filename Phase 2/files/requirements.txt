@@ -1,0 +1,31 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# --- Settings / validation ---
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# --- Database (async) ---
+SQLAlchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+alembic==1.14.0
+
+# --- Cache / pub-sub ---
+redis==5.2.1
+
+# --- Logging ---
+structlog==24.4.0
+
+# --- Market data / ingestion (Phase 1) ---
+kiteconnect==5.0.1          # Zerodha Kite Connect SDK
+APScheduler==3.10.4         # recurring scheduler (worker)
+tenacity==9.0.0             # retry with backoff
+aiolimiter==1.2.1           # async token-bucket rate limiting
+tzdata==2024.2              # IANA tz data for zoneinfo in slim containers
+
+# --- Technical analysis (Phase 2) ---
+numpy==2.1.3                # vectorized indicator math
+
+# Versions are pinned for reproducible builds. Refresh deliberately, then
+# regenerate the lockfile/image. No ML or sentiment deps in Phase 1.
